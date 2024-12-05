@@ -1,0 +1,33 @@
+version: '3'
+services: #noi build image va tao container
+  api-gateway:
+    container_name: api-gateway
+    build: ./api-gateway #docker build .-t ...
+    ports:
+      - 8080:8080
+    networks:
+      - node-network
+
+  user-service:
+    container_name: user-service
+    build: ./user-service 
+    networks:
+      - node-network
+  
+  order-service:
+    container_name: order-service
+    build: ./order-service 
+    networks:
+      - node-network
+  
+  product-service:
+    container_name: product-service
+    build: ./product-service 
+    networks:
+      - node-network
+
+networks:
+  node-network:
+     external: true #su dung mang co san truoc do
+
+#docker-compose up -d
