@@ -11,7 +11,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       name: "ORDER_NAME",
       transport: Transport.RMQ,
       options:{
-        urls: ['amqp://admin:123456@localhost:5672'],
+        urls: ['amqp://admin:123456@some-rabbit:5672'],
         queue: "Order_queue" ,//truyen dung queue o service muon ket noi,
         queueOptions:{
           durable: false

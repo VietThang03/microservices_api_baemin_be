@@ -10,7 +10,7 @@ import * as redisStore from 'cache-manager-redis-store';
   providers: [SearchService],
   imports:[CacheModule.register({
     store: redisStore,
-    host: "localhost",
+    host: "some-redis",
     port: 6379,
     auth_pass: "123456",
     ttl: 50000
